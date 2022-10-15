@@ -1,23 +1,28 @@
-#include<iostream>
-#include<string.h>
+#include <iostream>
 using namespace std;
+
 int main()
 {
-	char str1[20],str2[20];
-	int i,j,len=0,flag=0;
-	cout<<"enter the string:";
-	gets(str1);
-	len=strlen(str1)-1;
-	for(i=len,j=0;i>=0;i--,j++)
-	    str2[j]=str1[i];
-	if(strcmp(str1,str2))
-	flag=1;
-	if(flag==1)
-	cout<<str1<<"is not a palindrome";
-	else
-	cout<<str1<<"is a palindrome";
-	return 0;
+     int n, num, digit, rev = 0;
+
+     cout << "Enter a positive number: ";
+     cin >> num;
+
+     n = num;
+
+     do
+     {
+         digit = num % 10;
+         rev = (rev * 10) + digit;
+         num = num / 10;
+     } while (num != 0);
+
+     cout << " The reverse of the number is: " << rev << endl;
+
+     if (n == rev)
+         cout << " The number is a palindrome.";
+     else
+         cout << " The number is not a palindrome.";
+
+    return 0;
 }
-	
-
-
